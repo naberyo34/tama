@@ -16,8 +16,10 @@ export default function Home() {
         onClick={() => {
           setDarkTheme(!isDarkTheme)
         }}
-      />
-      <LargeButton />
+      >
+        ボタン
+      </Button>
+      <LargeButton>Button</LargeButton>
     </main>
   )
 }
