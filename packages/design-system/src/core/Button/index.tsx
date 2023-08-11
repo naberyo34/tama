@@ -4,34 +4,47 @@ import { button } from './index.css'
 
 /**
  * 標準的なボタンコンポーネント
- * children には テキストのラベルを渡すことを想定している 
+ * see: https://ark-ui.com/docs/react/components/presence
+ * see: https://chakra-ui.com/docs/components/button
+ * children は string しか渡せません
  */
 export const Button = React.forwardRef<
   React.ElementRef<typeof Pressable>,
-  React.ComponentProps<typeof Pressable>
->((props, forwardedRef) => {
+  Omit<React.ComponentProps<typeof Pressable>, 'asChild' | 'children'> & {
+    children: string
+  }
+>(({ children, ...props }, forwardedRef) => {
   return (
-    <Pressable ref={forwardedRef} className={button()} {...props}>
-      <>{props.children}</>
+    <Pressable
+      ref={forwardedRef}
+      className={button()}
+      {...props}
+      aria-label={children}
+    >
+      {children}
     </Pressable>
   )
 })
 
 /**
  * でっかいボタンコンポーネント
- * children には テキストのラベルを渡すことを想定している
+ * see: https://ark-ui.com/docs/react/components/presence
+ * see: https://chakra-ui.com/docs/components/button
+ * children は string しか渡せません
  */
 export const LargeButton = React.forwardRef<
   React.ElementRef<typeof Pressable>,
-  React.ComponentProps<typeof Pressable>
->((props, forwardedRef) => {
+  Omit<React.ComponentProps<typeof Pressable>, 'asChild' | 'children'> & {
+    children: string
+  }
+>(({ children, ...props }, forwardedRef) => {
   return (
     <Pressable
       ref={forwardedRef}
       className={button({ size: 'large' })}
       {...props}
     >
-      <>{props.children}</>
+      {children}
     </Pressable>
   )
 })
