@@ -6,7 +6,7 @@ import {
   SwitchThumb,
   SwitchLabel,
 } from '@ark-ui/react'
-import { switchComponent } from './index.css'
+import { switchControl, switchThumb, switchWrapper } from './index.css'
 
 /**
  * 標準的なトグルスイッチコンポーネント
@@ -18,10 +18,31 @@ import { switchComponent } from './index.css'
 export const Switch = (
   props: Omit<React.ComponentProps<typeof ArkSwitch>, 'asChild' | 'children'>
 ) => (
-  <ArkSwitch className={switchComponent()} {...props}>
+  <ArkSwitch
+    {...props}
+    className={`${switchWrapper()} ${props.className ?? ''}`}
+  >
     <SwitchInput />
-    <SwitchControl>
-      <SwitchThumb />
+    <SwitchControl className={switchControl()}>
+      <SwitchThumb className={switchThumb()} />
+    </SwitchControl>
+    {props.label && <SwitchLabel>{props.label}</SwitchLabel>}
+  </ArkSwitch>
+)
+
+/**
+ * でっかいトグルスイッチコンポーネント
+ */
+export const LargeSwitch = (
+  props: Omit<React.ComponentProps<typeof ArkSwitch>, 'asChild' | 'children'>
+) => (
+  <ArkSwitch
+    {...props}
+    className={`${switchWrapper({type: 'large'})} ${props.className ?? ''}`}
+  >
+    <SwitchInput />
+    <SwitchControl className={switchControl()}>
+      <SwitchThumb className={switchThumb()} />
     </SwitchControl>
     {props.label && <SwitchLabel>{props.label}</SwitchLabel>}
   </ArkSwitch>

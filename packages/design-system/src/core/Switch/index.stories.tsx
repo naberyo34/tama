@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Switch } from './index'
+import { LargeSwitch, Switch } from './index'
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
@@ -13,4 +13,11 @@ export const Default: Story = {
     label: 'スイッチ',
   },
   render: (args) => <Switch {...args} />,
+}
+
+export const Large: Story = {
+  args: {
+    label: 'でっかいスイッチ',
+  },
+  render: (args) => <LargeSwitch {...args} />,
 }

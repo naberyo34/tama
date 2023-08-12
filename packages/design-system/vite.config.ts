@@ -2,10 +2,11 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
+import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), vanillaExtractPlugin()],
+  plugins: [react(), vanillaExtractPlugin(), svgr()],
   // see: https://vitejs.dev/guide/build.html#library-mode
   build: {
     lib: {

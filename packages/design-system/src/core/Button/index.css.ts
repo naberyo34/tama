@@ -3,23 +3,72 @@ import { vars } from '../../theme.css'
 
 export const button = recipe({
   base: {
-    color: vars.color.primary,
-    backgroundColor: vars.bg.primary,
+    padding: '0.5em 1em',
+    border: 'none',
     borderRadius: 6,
+    transition: 'opacity 0.2s',
+    cursor: 'pointer',
     selectors: {
+      '&:hover': {
+        opacity: 0.8,
+      },
       '&[data-disabled]': {
-        opacity: 0.5,
+        color: vars.color.white,
+        backgroundColor: vars.color.disabled,
+        border: 'none',
+        opacity: 1,
+        cursor: 'not-allowed',
       },
     },
   },
   variants: {
-    size: {
-      small: { padding: 12, fontSize: 12 },
-      medium: { padding: 16, fontSize: 16 },
-      large: { padding: 24, fontSize: 24 },
+    type: {
+      normal: { fontSize: 16 },
+      large: { fontSize: 24 },
+      icon: {
+        display: 'inline-grid',
+        placeContent: 'center',
+        padding: 0,
+        width: 40,
+        height: 40,
+        fontSize: 16,
+        borderRadius: '50%',
+      },
+    },
+    theme: {
+      primary: {
+        color: vars.color.white,
+        backgroundColor: vars.color.primary,
+      },
+      themeSwitch: {
+        color: vars.color.text,
+        backgroundColor: vars.color.bg,
+        border: `1px solid ${vars.color.text}`,
+      },
     },
   },
   defaultVariants: {
-    size: 'medium',
+    type: 'normal',
+    theme: 'primary',
+  },
+})
+
+export const buttonIcon = recipe({
+  base: {
+    width: 16,
+    fill: vars.color.white,
+  },
+  variants: {
+    theme: {
+      primary: {
+        fill: vars.color.white,
+      },
+      themeSwitch: {
+        fill: vars.color.text,
+      },
+    },
+  },
+  defaultVariants: {
+    theme: 'primary',
   },
 })
