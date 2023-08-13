@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Button, LargeButton, IconButton, ThemeSwitchButton } from './index'
 import { ReactComponent as Sun } from './sun.svg'
-import { buttonIcon } from './index.css'
+import { Button, LargeButton, IconButton, ThemeSwitchButton } from './index'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -28,7 +27,7 @@ export const Large: Story = {
 
 export const Icon: IconButtonStory = {
   args: {
-    children: <Sun className={buttonIcon()} />,
+    children: <Sun />,
   },
   render: (args) => <IconButton {...args} />,
 }

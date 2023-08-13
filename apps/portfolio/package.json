@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix"
   },
   "dependencies": {
     "@tama/design-system": "*",
@@ -22,6 +22,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "@vanilla-extract/next-plugin": "^2.2.2"
   }
 }

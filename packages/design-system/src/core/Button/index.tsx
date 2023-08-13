@@ -1,8 +1,8 @@
-import React from 'react'
 import { Pressable } from '@ark-ui/react'
+import React from 'react'
 import { button, buttonIcon } from './index.css'
-import { ReactComponent as Sun } from './sun.svg'
 import { ReactComponent as Moon } from './moon.svg'
+import { ReactComponent as Sun } from './sun.svg'
 
 /**
  * 標準的なボタンコンポーネント
@@ -51,16 +51,23 @@ export const LargeButton = React.forwardRef<
  */
 export const IconButton = React.forwardRef<
   React.ElementRef<typeof Pressable>,
-  Omit<React.ComponentProps<typeof Pressable>, 'asChild'>
->(({ children, ...props }, forwardedRef) => (
-  <Pressable
-    ref={forwardedRef}
-    className={`${button({ type: 'icon' })} ${props.className ?? ''}`}
-    {...props}
-  >
-    {children}
-  </Pressable>
-))
+  Omit<React.ComponentProps<typeof Pressable>, 'asChild' | 'children'> & {
+    children: React.ReactElement
+  }
+>(({ children, ...props }, forwardedRef) => {
+  const childrenWithStyles = React.cloneElement(children, {
+    className: buttonIcon(),
+  })
+  return (
+    <Pressable
+      {...props}
+      ref={forwardedRef}
+      className={`${button({ type: 'icon' })} ${props.className ?? ''}`}
+    >
+      {childrenWithStyles}
+    </Pressable>
+  )
+})
 
 /**
  * テーマ切り替え用トグルボタン
@@ -76,12 +83,12 @@ export const ThemeSwitchButton = React.forwardRef<
   }
 >(({ ...props }, forwardedRef) => (
   <Pressable
+    {...props}
     ref={forwardedRef}
     className={`${button({ type: 'icon', theme: 'themeSwitch' })} ${
       props.className ?? ''
     }`}
     aria-label="テーマ切り替え"
-    {...props}
   >
     {props.isDarkMode ? (
       <Moon className={buttonIcon({ theme: 'themeSwitch' })} />

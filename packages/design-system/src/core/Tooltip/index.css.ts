@@ -1,9 +1,11 @@
-import { fadeIn, fadeOut, vars } from '../../theme.css'
 import { style } from '@vanilla-extract/css'
+import { fadeIn, fadeOut, vars } from '../../theme.css'
 
-export const tooltipContent = style({ 
-  position: 'relative',
-  top: 4,
+export const tooltipTrigger = style({
+  display: 'inline-block',
+})
+
+export const tooltipContent = style({
   padding: 8,
   fontSize: 12,
   color: vars.color.bg,

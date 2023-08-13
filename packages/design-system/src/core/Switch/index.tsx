@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Switch as ArkSwitch,
   SwitchInput,
@@ -6,6 +5,7 @@ import {
   SwitchThumb,
   SwitchLabel,
 } from '@ark-ui/react'
+import React from 'react'
 import { switchControl, switchThumb, switchWrapper } from './index.css'
 
 /**

@@ -55,7 +55,7 @@ export const button = recipe({
 
 export const buttonIcon = recipe({
   base: {
-    width: 16,
+    height: 16,
     fill: vars.color.white,
   },
   variants: {
