@@ -15,18 +15,16 @@ export const Button = React.forwardRef<
   Omit<React.ComponentProps<typeof Pressable>, 'asChild' | 'children'> & {
     children: string
   }
->(({ children, ...props }, forwardedRef) => {
-  return (
-    <Pressable
-      {...props}
-      ref={forwardedRef}
-      className={`${button()} ${props.className ?? ''}`}
-      aria-label={children}
-    >
-      {children}
-    </Pressable>
-  )
-})
+>(({ children, ...props }, forwardedRef) => (
+  <Pressable
+    {...props}
+    ref={forwardedRef}
+    className={`${button()} ${props.className ?? ''}`}
+    aria-label={children}
+  >
+    {children}
+  </Pressable>
+))
 
 /**
  * でっかいボタンコンポーネント
@@ -37,17 +35,15 @@ export const LargeButton = React.forwardRef<
   Omit<React.ComponentProps<typeof Pressable>, 'asChild' | 'children'> & {
     children: string
   }
->(({ children, ...props }, forwardedRef) => {
-  return (
-    <Pressable
-      {...props}
-      ref={forwardedRef}
-      className={`${button({ type: 'large' })} ${props.className ?? ''}`}
-    >
-      {children}
-    </Pressable>
-  )
-})
+>(({ children, ...props }, forwardedRef) => (
+  <Pressable
+    {...props}
+    ref={forwardedRef}
+    className={`${button({ type: 'large' })} ${props.className ?? ''}`}
+  >
+    {children}
+  </Pressable>
+))
 
 /**
  * アイコン入りボタンコンポーネント 丸型ボタン
@@ -56,17 +52,15 @@ export const LargeButton = React.forwardRef<
 export const IconButton = React.forwardRef<
   React.ElementRef<typeof Pressable>,
   Omit<React.ComponentProps<typeof Pressable>, 'asChild'>
->(({ children, ...props }, forwardedRef) => {
-  return (
-    <Pressable
-      ref={forwardedRef}
-      className={`${button({ type: 'icon' })} ${props.className ?? ''}`}
-      {...props}
-    >
-      {children}
-    </Pressable>
-  )
-})
+>(({ children, ...props }, forwardedRef) => (
+  <Pressable
+    ref={forwardedRef}
+    className={`${button({ type: 'icon' })} ${props.className ?? ''}`}
+    {...props}
+  >
+    {children}
+  </Pressable>
+))
 
 /**
  * テーマ切り替え用トグルボタン
@@ -74,23 +68,25 @@ export const IconButton = React.forwardRef<
  */
 export const ThemeSwitchButton = React.forwardRef<
   React.ElementRef<typeof Pressable>,
-  Omit<React.ComponentProps<typeof Pressable>, 'children' | 'asChild' | 'disabled'> & {
+  Omit<
+    React.ComponentProps<typeof Pressable>,
+    'children' | 'asChild' | 'disabled'
+  > & {
     isDarkMode: boolean
   }
->(({ ...props }, forwardedRef) => {
-  return (
-    <Pressable
-      ref={forwardedRef}
-      className={`${button({ type: 'icon', theme: 'themeSwitch' })} ${
-        props.className ?? ''
-      }`}
-      {...props}
-    >
-      {props.isDarkMode ? (
-        <Moon className={buttonIcon({ theme: 'themeSwitch' })} />
-      ) : (
-        <Sun className={buttonIcon({ theme: 'themeSwitch' })} />
-      )}
-    </Pressable>
-  )
-})
+>(({ ...props }, forwardedRef) => (
+  <Pressable
+    ref={forwardedRef}
+    className={`${button({ type: 'icon', theme: 'themeSwitch' })} ${
+      props.className ?? ''
+    }`}
+    aria-label="テーマ切り替え"
+    {...props}
+  >
+    {props.isDarkMode ? (
+      <Moon className={buttonIcon({ theme: 'themeSwitch' })} />
+    ) : (
+      <Sun className={buttonIcon({ theme: 'themeSwitch' })} />
+    )}
+  </Pressable>
+))

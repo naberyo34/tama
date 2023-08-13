@@ -1,7 +1,13 @@
 'use client'
 
 import { darkModeAtom } from '@/app/_states/darkModeAtom'
-import { ThemeSwitchButton, lightTheme, darkTheme } from '@tama/design-system'
+import { ClientOnly } from '@/misc/ClientOnly'
+import {
+  ThemeSwitchButton,
+  lightTheme,
+  darkTheme,
+  Tooltip,
+} from '@tama/design-system'
 import { useAtom } from 'jotai'
 
 /**
@@ -16,5 +22,11 @@ export default function ThemeSwitchButtonContainer() {
     document.getElementsByTagName('html')[0].classList.toggle(lightTheme)
   }
 
-  return <ThemeSwitchButton isDarkMode={isDarkMode} onClick={onClick} />
+  return (
+    <ClientOnly>
+      <Tooltip content="テーマ切り替え">
+        <ThemeSwitchButton isDarkMode={isDarkMode} onClick={onClick} />
+      </Tooltip>
+    </ClientOnly>
+  )
 }
