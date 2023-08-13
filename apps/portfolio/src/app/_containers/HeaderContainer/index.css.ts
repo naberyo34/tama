@@ -1,9 +1,11 @@
 import { style } from '@vanilla-extract/css'
 
 export const header = style({
+  position: 'fixed',
   display: 'flex',
   justifyContent: 'space-between',
   padding: 40,
+  width: '100%',
 })
 
 export const link = style({

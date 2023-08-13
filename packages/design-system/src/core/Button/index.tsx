@@ -81,7 +81,7 @@ export const ThemeSwitchButton = React.forwardRef<
   > & {
     isDarkMode: boolean
   }
->(({ ...props }, forwardedRef) => (
+>(({ isDarkMode, ...props }, forwardedRef) => (
   <Pressable
     {...props}
     ref={forwardedRef}
@@ -90,7 +90,7 @@ export const ThemeSwitchButton = React.forwardRef<
     }`}
     aria-label="テーマ切り替え"
   >
-    {props.isDarkMode ? (
+    {isDarkMode ? (
       <Moon className={buttonIcon({ theme: 'themeSwitch' })} />
     ) : (
       <Sun className={buttonIcon({ theme: 'themeSwitch' })} />
