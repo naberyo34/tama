@@ -3,6 +3,7 @@ import { style } from '@vanilla-extract/css'
 export const header = style({
   position: 'fixed',
   display: 'flex',
+  alignItems: 'center',
   justifyContent: 'space-between',
   padding: 20,
   width: '100%',
