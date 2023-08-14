@@ -8,8 +8,8 @@ import {
 } from '@tama/design-system'
 import { useAtom } from 'jotai'
 import { useCallback } from 'react'
+import { darkModeAtom } from '../../../_states/darkModeAtom'
 import { themeSwitchButtonContainer } from './index.css'
-import { darkModeAtom } from '@/app/_states/darkModeAtom'
 
 /**
  * ダークモード切り替え機能

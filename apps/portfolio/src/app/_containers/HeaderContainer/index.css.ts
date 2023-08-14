@@ -4,7 +4,7 @@ export const header = style({
   position: 'fixed',
   display: 'flex',
   justifyContent: 'space-between',
-  padding: 40,
+  padding: 20,
   width: '100%',
 })
 

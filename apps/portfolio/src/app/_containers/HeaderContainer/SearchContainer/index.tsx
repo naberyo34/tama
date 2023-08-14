@@ -2,9 +2,9 @@
 
 import { IconButton, Tooltip, Popover } from '@tama/design-system'
 import { useAtom } from 'jotai'
+import { searchQueryAtom } from '../../../_states/searchQueryAtom'
 import { searchInput } from './index.css'
 import Search from './search.svg'
-import { searchQueryAtom } from '@/app/_states/searchQueryAtom'
 
 /**
  * 検索窓を表示
