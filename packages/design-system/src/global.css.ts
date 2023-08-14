@@ -1,6 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css'
 
 globalStyle('*', {
+  padding: 0,
   margin: 0,
   lineHeight: 1,
   boxSizing: 'border-box',

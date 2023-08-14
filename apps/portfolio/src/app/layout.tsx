@@ -1,5 +1,6 @@
 import '@tama/design-system/css'
-import { body } from './layout.css'
+import HeaderContainer from './_containers/HeaderContainer'
+import { article, body } from './layout.css'
 
 // TODO: 初期テーマは 本体設定に準ずる、localStorageに記憶する
 export default function RootLayout({
@@ -14,7 +15,12 @@ export default function RootLayout({
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="./themeDetection.js" />
       </head>
-      <body className={body}>{children}</body>
+      <body className={body}>
+        <main>
+          <HeaderContainer />
+          <article className={article}>{children}</article>
+        </main>
+      </body>
     </html>
   )
 }
