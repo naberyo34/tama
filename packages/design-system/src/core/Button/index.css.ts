@@ -4,8 +4,10 @@ import { vars } from '../../theme.css'
 export const button = recipe({
   base: {
     padding: '0.5em 1em',
-    border: 'none',
-    borderRadius: 6,
+    color: vars.color.text,
+    backgroundColor: vars.color.bg,
+    border: `1px solid ${vars.color.text}`,
+    borderRadius: 4,
     transition: 'opacity 0.2s',
     cursor: 'pointer',
     selectors: {
@@ -13,10 +15,7 @@ export const button = recipe({
         opacity: 0.8,
       },
       '&[data-disabled]': {
-        color: vars.color.white,
-        backgroundColor: vars.color.disabled,
-        border: 'none',
-        opacity: 1,
+        opacity: 0.2,
         cursor: 'not-allowed',
       },
     },
@@ -32,43 +31,18 @@ export const button = recipe({
         width: 40,
         height: 40,
         fontSize: 16,
-        borderRadius: '50%',
-      },
-    },
-    theme: {
-      primary: {
-        color: vars.color.white,
-        backgroundColor: vars.color.primary,
-      },
-      themeSwitch: {
-        color: vars.color.text,
-        backgroundColor: vars.color.bg,
-        border: `1px solid ${vars.color.text}`,
+        border: 'none',
       },
     },
   },
   defaultVariants: {
     type: 'normal',
-    theme: 'primary',
   },
 })
 
 export const buttonIcon = recipe({
   base: {
-    height: 16,
-    fill: vars.color.white,
-  },
-  variants: {
-    theme: {
-      primary: {
-        fill: vars.color.white,
-      },
-      themeSwitch: {
-        fill: vars.color.text,
-      },
-    },
-  },
-  defaultVariants: {
-    theme: 'primary',
+    height: 20,
+    fill: vars.color.text,
   },
 })

@@ -1,10 +1,10 @@
+import { vars } from '@tama/design-system'
 import { style } from '@vanilla-extract/css'
-import { vars } from '../src/theme.css'
 
-export const previewWrapper = style({
-  position: 'relative',
-  padding: 40,
-  marginTop: 20,
+export const searchInput = style({
+  padding: 8,
+  fontSize: 12,
+  color: vars.color.text,
   backgroundColor: vars.color.bg,
   border: `1px solid ${vars.color.text}`,
   borderRadius: 4,

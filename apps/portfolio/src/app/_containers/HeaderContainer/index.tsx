@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SearchButtonContainer from './SearchButtonContainer'
+import SearchContainer from './SearchContainer'
 import ThemeSwitchButtonContainer from './ThemeSwitchButtonContainer'
 import { header, link, title } from './index.css'
 
@@ -10,7 +10,7 @@ export default function HeaderContainer() {
         <h1 className={title}>tama</h1>
       </Link>
       <nav>
-        <SearchButtonContainer />
+        <SearchContainer />
         <ThemeSwitchButtonContainer />
       </nav>
     </header>

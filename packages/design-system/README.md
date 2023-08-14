@@ -31,9 +31,9 @@ npm run build
 
 `onClick` 処理などはすべてアプリケーション側に実装する。
 
-### 必ず forwardRef で実装する
+### 必要なら forwardRef で実装する
 
-Refを渡せないと後で確実に困るため。
+Refを渡せないと後で困りそうな要素はforwardRef化しておく。
 
 ### asChild を禁止する
 

@@ -1,4 +1,4 @@
-import { ReactComponent as Sun } from './sun.svg'
+import { ReactComponent as Search } from './search.svg'
 import { Button, LargeButton, IconButton, ThemeSwitchButton } from './index'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -27,7 +27,7 @@ export const Large: Story = {
 
 export const Icon: IconButtonStory = {
   args: {
-    children: <Sun />,
+    children: <Search />,
   },
   render: (args) => <IconButton {...args} />,
 }

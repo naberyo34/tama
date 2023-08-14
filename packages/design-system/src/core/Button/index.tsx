@@ -47,7 +47,7 @@ export const LargeButton = React.forwardRef<
 
 /**
  * アイコン入りボタンコンポーネント 丸型ボタン
- * children の制限はないが、アイコンを渡すのが望ましい
+ * children の制限はないが、アイコンsvgを渡すのが望ましい
  */
 export const IconButton = React.forwardRef<
   React.ElementRef<typeof Pressable>,
@@ -85,15 +85,13 @@ export const ThemeSwitchButton = React.forwardRef<
   <Pressable
     {...props}
     ref={forwardedRef}
-    className={`${button({ type: 'icon', theme: 'themeSwitch' })} ${
-      props.className ?? ''
-    }`}
+    className={`${button({ type: 'icon' })} ${props.className ?? ''}`}
     aria-label="テーマ切り替え"
   >
     {isDarkMode ? (
-      <Moon className={buttonIcon({ theme: 'themeSwitch' })} />
+      <Moon className={buttonIcon()} />
     ) : (
-      <Sun className={buttonIcon({ theme: 'themeSwitch' })} />
+      <Sun className={buttonIcon()} />
     )}
   </Pressable>
 ))

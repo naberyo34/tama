@@ -8,8 +8,9 @@ export const tooltipTrigger = style({
 export const tooltipContent = style({
   padding: 8,
   fontSize: 12,
-  color: vars.color.bg,
-  backgroundColor: vars.color.text,
+  color: vars.color.text,
+  backgroundColor: vars.color.bg,
+  border: `1px solid ${vars.color.text}`,
   borderRadius: 4,
   selectors: {
     '&[data-state=closed]': {

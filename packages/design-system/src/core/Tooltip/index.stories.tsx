@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Tooltip>
 
 export const Default: Story = {
   args: {
-    content: 'テーマ切り替え',
+    content: 'ツールチップ',
   },
   render: (args) => (
     <Tooltip {...args}>

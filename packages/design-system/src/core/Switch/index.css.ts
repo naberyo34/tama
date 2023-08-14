@@ -26,19 +26,18 @@ export const switchControl = recipe({
     width: '2em',
     height: '1em',
     boxSizing: 'content-box',
-    backgroundColor: vars.color.gray,
-    border: `0.2em solid ${vars.color.gray}`,
+    backgroundColor: vars.color.text,
+    border: `0.2em solid ${vars.color.text}`,
     borderRadius: '2em',
     transition: 'background-color 0.2s, border-color 0.2s',
     cursor: 'pointer',
     selectors: {
       '&[data-state=checked]': {
-        backgroundColor: vars.color.primary,
-        borderColor: vars.color.primary,
+        backgroundColor: vars.color.text,
+        borderColor: vars.color.text,
       },
       '&[data-disabled]': {
-        backgroundColor: vars.color.disabled,
-        borderColor: vars.color.disabled,
+        opacity: 0.2,
         cursor: 'not-allowed',
       },
     },
@@ -49,7 +48,7 @@ export const switchThumb = recipe({
   base: {
     width: '1em',
     height: '1em',
-    backgroundColor: vars.color.white,
+    backgroundColor: vars.color.bg,
     borderRadius: '1em',
     transition: 'transform 0.2s',
     selectors: {

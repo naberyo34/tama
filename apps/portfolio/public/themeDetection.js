@@ -3,7 +3,7 @@
  */
 function themeDetection() {
   const lightTheme = 'vfcsiw0'
-  const darkTheme = 'vfcsiw7'
+  const darkTheme = 'vfcsiw5'
 
   const isDarkThemeLocalStorage = localStorage.getItem('darkMode') === 'true'
   const isDarkThemeUserSettings = matchMedia(

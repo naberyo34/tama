@@ -4,10 +4,8 @@ export const [lightTheme, vars] = createTheme({
   color: {
     text: '#222',
     bg: '#fff',
-    primary: '#f0c05d',
-    disabled: '#ddd',
     white: '#fff',
-    gray: '#bbb',
+    black: '#222',
   },
 })
 
@@ -15,10 +13,8 @@ export const darkTheme = createTheme(vars, {
   color: {
     text: '#ddd',
     bg: '#444',
-    primary: '#f0c05d',
-    disabled: '#ddd',
-    white: '#fff',
-    gray: '#bbb',
+    white: '#ddd',
+    black: '#444',
   },
 })
 

@@ -15,4 +15,5 @@ export const link = style({
 
 export const title = style({
   fontSize: 32,
+  fontWeight: 'bold',
 })
