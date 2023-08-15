@@ -12,8 +12,6 @@ import Search from './search.svg'
 export default function SearchContainer() {
   const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom)
 
-  console.log(searchQuery)
-
   return (
     <Popover
       content={

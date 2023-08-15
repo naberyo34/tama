@@ -19,13 +19,14 @@ export default function CardGridContainer(props: Props) {
   return (
     <CardGrid>
       {props.posts.map((post) => (
-        <Link className={cardLink} key={post.slug} href={`/${post.slug}`}>
-          <Card
-            title={post.title}
-            description={post.description}
-            updatedAt={format(post.updatedAt, 'yyyy.MM.dd')}
-          />
-        </Link>
+        // <Link className={cardLink} key={post.slug} href={`/${post.slug}`}>
+        <Card
+          key={post.slug}
+          title={post.title}
+          description={post.description}
+          updatedAt={format(post.updatedAt, 'yyyy.MM.dd')}
+        />
+        // </Link>
       ))}
     </CardGrid>
   )
