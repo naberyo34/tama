@@ -13,7 +13,7 @@ export default function RootLayout({
       <head>
         {/* MEMO: ダークモード時のチラつきを防ぐために意図的にレンダリングブロックを許容している */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="./themeDetection.js" />
+        {/* <script src="./themeDetection.js" /> */}
       </head>
       <body className={body}>
         <main>
