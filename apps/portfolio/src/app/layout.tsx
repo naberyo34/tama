@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="vfcsiw0">
       <head>
         {/* MEMO: ダークモード時のチラつきを防ぐために意図的にレンダリングブロックを許容している */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
