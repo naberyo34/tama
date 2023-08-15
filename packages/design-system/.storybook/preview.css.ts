@@ -6,6 +6,5 @@ export const previewWrapper = style({
   padding: 40,
   marginTop: 20,
   backgroundColor: vars.color.bg,
-  border: `1px solid ${vars.color.text}`,
   borderRadius: 4,
 })

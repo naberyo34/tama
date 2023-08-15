@@ -1,3 +1,4 @@
+import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 import { vars } from '../../theme.css'
 
@@ -20,41 +21,37 @@ export const switchWrapper = recipe({
   },
 })
 
-export const switchControl = recipe({
-  base: {
-    display: 'inline-flex',
-    width: '2em',
-    height: '1em',
-    boxSizing: 'content-box',
-    backgroundColor: vars.color.text,
-    border: `0.2em solid ${vars.color.text}`,
-    borderRadius: '2em',
-    transition: 'background-color 0.2s, border-color 0.2s',
-    cursor: 'pointer',
-    selectors: {
-      '&[data-state=checked]': {
-        backgroundColor: vars.color.text,
-        borderColor: vars.color.text,
-      },
-      '&[data-disabled]': {
-        opacity: 0.2,
-        cursor: 'not-allowed',
-      },
+export const switchControl = style({
+  display: 'inline-flex',
+  width: '2em',
+  height: '1em',
+  boxSizing: 'content-box',
+  backgroundColor: vars.color.text,
+  border: `0.2em solid ${vars.color.text}`,
+  borderRadius: '2em',
+  transition: 'background-color 0.2s, border-color 0.2s',
+  cursor: 'pointer',
+  selectors: {
+    '&[data-state=checked]': {
+      backgroundColor: vars.color.text,
+      borderColor: vars.color.text,
+    },
+    '&[data-disabled]': {
+      opacity: 0.2,
+      cursor: 'not-allowed',
     },
   },
 })
 
-export const switchThumb = recipe({
-  base: {
-    width: '1em',
-    height: '1em',
-    backgroundColor: vars.color.bg,
-    borderRadius: '1em',
-    transition: 'transform 0.2s',
-    selectors: {
-      '&[data-state=checked]': {
-        transform: 'translateX(1em)',
-      },
+export const switchThumb = style({
+  width: '1em',
+  height: '1em',
+  backgroundColor: vars.color.bg,
+  borderRadius: '1em',
+  transition: 'transform 0.2s',
+  selectors: {
+    '&[data-state=checked]': {
+      transform: 'translateX(1em)',
     },
   },
 })

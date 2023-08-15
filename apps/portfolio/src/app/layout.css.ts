@@ -2,7 +2,7 @@ import { vars } from '@tama/design-system'
 import { style } from '@vanilla-extract/css'
 
 export const body = style({
-  padding: 20,
+  padding: 40,
   color: vars.color.text,
   backgroundColor: vars.color.bg,
 })

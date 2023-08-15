@@ -23,8 +23,8 @@ export const Switch = (
     className={`${switchWrapper()} ${props.className ?? ''}`}
   >
     <SwitchInput />
-    <SwitchControl className={switchControl()}>
-      <SwitchThumb className={switchThumb()} />
+    <SwitchControl className={switchControl}>
+      <SwitchThumb className={switchThumb} />
     </SwitchControl>
     {props.label && <SwitchLabel>{props.label}</SwitchLabel>}
   </ArkSwitch>
@@ -38,11 +38,11 @@ export const LargeSwitch = (
 ) => (
   <ArkSwitch
     {...props}
-    className={`${switchWrapper({type: 'large'})} ${props.className ?? ''}`}
+    className={`${switchWrapper({ type: 'large' })} ${props.className ?? ''}`}
   >
     <SwitchInput />
-    <SwitchControl className={switchControl()}>
-      <SwitchThumb className={switchThumb()} />
+    <SwitchControl className={switchControl}>
+      <SwitchThumb className={switchThumb} />
     </SwitchControl>
     {props.label && <SwitchLabel>{props.label}</SwitchLabel>}
   </ArkSwitch>

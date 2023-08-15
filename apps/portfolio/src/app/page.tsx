@@ -1,20 +1,23 @@
 import { Metadata } from 'next'
 import prisma from '../../lib/prisma'
-import { li } from './page.css'
+import CardGridContainer from './_containers/CardGridContainer'
 
 export const metadata: Metadata = {
   title: 'tama',
 }
 
 export default async function Home() {
-  const posts = prisma.post.findMany({
+  const posts = await prisma.post.findMany({
     select: {
       id: true,
+      slug: true,
       title: true,
-      content: true,
+      description: true,
+      updatedAt: true,
+    },
+    orderBy: {
+      createdAt: 'desc',
     },
   })
-  return (
-    <ul>{(await posts)?.map((post) => <li className={li} key={post.id}>{post.title} {post.content}</li>)}</ul>
-  )
+  return <CardGridContainer posts={posts} />
 }

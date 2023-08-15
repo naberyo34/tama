@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import type { Preview } from '@storybook/react'
 import { ThemeSwitchButton } from '../src/core/Button'
+import '../src/global.css';
 import { lightTheme, darkTheme } from '../src/theme.css'
 import { previewWrapper } from './preview.css'
 

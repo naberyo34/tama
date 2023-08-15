@@ -9,13 +9,14 @@ import { popoverContent, popoverTrigger } from './index.css'
 
 export const Popover = ({
   children,
+  content,
   ...props
 }: React.PropsWithChildren<{
   className?: string
   content: React.ReactNode
 }>) => {
   return (
-    <ArkPopover positioning={{ placement: 'left' }}>
+    <ArkPopover {...props} positioning={{ placement: 'left' }}>
       <PopoverTrigger asChild>
         <span className={`${popoverTrigger} ${props.className ?? ''}`}>
           {children}
@@ -23,7 +24,7 @@ export const Popover = ({
       </PopoverTrigger>
       <PopoverPositioner>
         <PopoverContent className={popoverContent}>
-          {props.content}
+          {content}
         </PopoverContent>
       </PopoverPositioner>
     </ArkPopover>

@@ -17,7 +17,7 @@ export const Tooltip = ({
   children,
   ...props
 }: React.PropsWithChildren<{ className?: string; content: string }>) => (
-  <ArkTooltip openDelay={200} closeDelay={200}>
+  <ArkTooltip {...props} openDelay={200} closeDelay={200}>
     <TooltipTrigger asChild>
       <span className={`${tooltipTrigger} ${props.className ?? ''}`}>
         {children}
