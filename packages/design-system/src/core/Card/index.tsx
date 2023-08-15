@@ -5,7 +5,7 @@ export const Card = React.forwardRef<
   React.ElementRef<'div'>,
   React.ComponentProps<'div'> & {
     title: string
-    description?: string
+    description: string | null
     updatedAt: string
   }
 >(({ title, description, updatedAt, ...props }, forwardedRef) => (

@@ -14,10 +14,12 @@ export const Default: Story = {
     <CardGrid>
       <Card
         title="タイトルタイトルタイトルタイトル"
+        description={null}
         updatedAt="2023.01.01"
       />
       <Card
         title="タイトル"
+        description={null}
         updatedAt="2023.01.01"
       />
       <Card
