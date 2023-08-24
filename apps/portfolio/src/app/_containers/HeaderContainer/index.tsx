@@ -3,7 +3,11 @@ import SearchContainer from './SearchContainer'
 import ThemeSwitchButtonContainer from './ThemeSwitchButtonContainer'
 import { header, link, title } from './index.css'
 
-export default function HeaderContainer() {
+export default function HeaderContainer({
+  isDarkModeCookie,
+}: {
+  isDarkModeCookie: string | undefined
+}) {
   return (
     <header className={header}>
       <Link href="/" className={link}>
@@ -11,7 +15,7 @@ export default function HeaderContainer() {
       </Link>
       <nav>
         <SearchContainer />
-        <ThemeSwitchButtonContainer />
+        <ThemeSwitchButtonContainer isDarkModeCookie={isDarkModeCookie} />
       </nav>
     </header>
   )

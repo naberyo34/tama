@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import type { Preview } from '@storybook/react'
-import { ThemeSwitchButton } from '../src/core/Button'
-import '../src/global.css';
+import '../src/global.css'
 import { lightTheme, darkTheme } from '../src/theme.css'
-import { previewWrapper } from './preview.css'
 
 const preview: Preview = {
   parameters: {
@@ -14,21 +12,16 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    backgrounds: {
+      default: 'light'
+    }
   },
   decorators: [
-    (Story) => {
-      const [isDarkMode, setDarkMode] = useState(false)
+    (Story, StoryContext) => {
+      const isDarkMode = StoryContext.globals.backgrounds?.value === '#333333'
       return (
         <main className={isDarkMode ? darkTheme : lightTheme}>
-          <ThemeSwitchButton
-            isDarkMode={isDarkMode}
-            onClick={() => {
-              setDarkMode(!isDarkMode)
-            }}
-          />
-          <div className={previewWrapper}>
-            <Story />
-          </div>
+          <Story />
         </main>
       )
     },
