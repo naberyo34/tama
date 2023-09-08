@@ -1,6 +1,6 @@
 # @tama/design-system
 
-Ark UI + vanilla-extractで作成するデザインシステム。
+Ark UI + Panda CSSで作成するデザインシステム。
 
 ## Getting Started
 

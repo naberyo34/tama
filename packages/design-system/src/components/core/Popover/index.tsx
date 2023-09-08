@@ -5,7 +5,6 @@ import {
   PopoverTrigger,
 } from '@ark-ui/react'
 import React from 'react'
-import { popoverContent, popoverTrigger } from './index.css'
 
 export const Popover = ({
   children,
@@ -18,12 +17,12 @@ export const Popover = ({
   return (
     <ArkPopover {...props} positioning={{ placement: 'left' }}>
       <PopoverTrigger asChild>
-        <span className={`${popoverTrigger} ${props.className ?? ''}`}>
+        <span>
           {children}
         </span>
       </PopoverTrigger>
       <PopoverPositioner>
-        <PopoverContent className={popoverContent}>
+        <PopoverContent>
           {content}
         </PopoverContent>
       </PopoverPositioner>

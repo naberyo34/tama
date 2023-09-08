@@ -1,5 +1,5 @@
-import { IconButton } from '../Button'
-import { ReactComponent as Search } from '../Button/search.svg'
+import { IconButton } from '../IconButton'
+import { ReactComponent as Search } from '../IconButton/search.svg'
 import { Popover } from './index'
 import type { Meta, StoryObj } from '@storybook/react'
 

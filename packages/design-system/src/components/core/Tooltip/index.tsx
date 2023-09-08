@@ -6,7 +6,6 @@ import {
   TooltipTrigger,
 } from '@ark-ui/react'
 import React from 'react'
-import { tooltipContent, tooltipTrigger } from './index.css'
 
 /**
  * トリガー要素にホバーするとツールチップを表示する
@@ -19,15 +18,11 @@ export const Tooltip = ({
 }: React.PropsWithChildren<{ className?: string; content: string }>) => (
   <ArkTooltip {...props} openDelay={200} closeDelay={200}>
     <TooltipTrigger asChild>
-      <span className={`${tooltipTrigger} ${props.className ?? ''}`}>
-        {children}
-      </span>
+      <span>{children}</span>
     </TooltipTrigger>
     <Portal>
       <TooltipPositioner>
-        <TooltipContent className={tooltipContent}>
-          {props.content}
-        </TooltipContent>
+        <TooltipContent>{props.content}</TooltipContent>
       </TooltipPositioner>
     </Portal>
   </ArkTooltip>
