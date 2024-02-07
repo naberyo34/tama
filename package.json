@@ -7,7 +7,7 @@
     "prepare": "panda codegen",
     "build": "remix build",
     "dev": "remix dev --manual",
-    "format": "npx @biomejs/biome format app/ --write",
+    "format": "bunx @biomejs/biome format app/ --write",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
     "storybook": "storybook dev -p 6006",
@@ -39,7 +39,5 @@
     "storybook": "^7.6.12",
     "typescript": "^5.1.6"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "packageManager": "bun@1.0.26"
 }
