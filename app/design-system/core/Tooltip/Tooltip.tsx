@@ -10,6 +10,7 @@ const Content = styled(ArkTooltip.Content, {
     fontSize: 'sm',
     color: 'white',
     backgroundColor: 'spaceCadet',
+    borderRadius: 'sm',
   },
 })
 
