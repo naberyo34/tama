@@ -3,8 +3,11 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "format"
+  },
   "scripts": {
-    "prepare": "panda codegen",
+    "prepare": "husky && panda codegen",
     "build": "remix build",
     "dev": "remix dev --manual",
     "format": "bunx @biomejs/biome format app/ --write",
@@ -36,6 +39,8 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
     "storybook": "^7.6.12",
     "typescript": "^5.1.6",
     "vite": "^5.1.1"
