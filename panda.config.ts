@@ -7,10 +7,7 @@ export default defineConfig({
   // The extension for the emitted JavaScript files
   outExtension: 'js',
   // Where to look for your css declarations
-  include: [
-    './app/routes/**/*.{ts,tsx,js,jsx}',
-    './app/components/**/*.{ts,tsx,js,jsx}',
-  ],
+  include: ['./app/**/*.{ts,tsx,js,jsx}'],
 
   // Files to exclude
   exclude: [],
@@ -95,9 +92,6 @@ export default defineConfig({
     },
     extend: {},
   },
-
-  // The output directory for your css system
-  outdir: 'styled-system',
   globalCss: defineGlobalStyles({
     'html, body': {
       color: 'black',
@@ -108,4 +102,10 @@ export default defineConfig({
       lineHeights: '1',
     },
   }),
+  shorthands: false,
+  strictTokens: true,
+  jsxFramework: 'react',
+  // The output directory for your css system
+  outdir: '/app/styled-system',
+  lightningcss: true,
 })

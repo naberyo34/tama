@@ -12,9 +12,9 @@
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "baseUrl": "./app",
     "paths": {
-      "~/*": ["./app/*"]
+      "@/*": ["*"]
     },
 
     // Remix takes care of building everything in `remix build`.
